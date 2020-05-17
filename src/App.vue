@@ -52,4 +52,18 @@ button {
   border-radius: 2%;
   background-color: #e0e0e0;
 }
+
+/** TRANSITIONS */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease-out;
+}
 </style>
