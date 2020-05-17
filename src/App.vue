@@ -20,16 +20,21 @@
 }
 
 button {
-  width: 5em;
-  height: 2em;
+  height: 2.2em;
   margin: 0.5em;
-  border-radius: 5px;
+  border-radius: 0.3em;
   background: linear-gradient(to right, #16c0b0, #84cf6a);
-  font-size: 1em;
   color: white;
-  border: none;
-  outline: none;
-  cursor: pointer;
+}
+
+input {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 30%;
+  height: 1.8em;
+  padding: 0.5em;
+  margin: 0.2em;
+  font: 0.8em 'Avenir', Helvetica, sans-serif;
 }
 
 #nav {
