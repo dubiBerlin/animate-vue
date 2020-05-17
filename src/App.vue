@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Modal</router-link> |
+      <router-link to="/list">List</router-link>
     </div>
     <transition name="slide-fade" mode="out-in">
       <router-view />
@@ -53,6 +53,32 @@ button {
   margin-top: 20px;
   border-radius: 2%;
   background-color: #e0e0e0;
+}
+
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+
+p {
+  font-size: 0.8em;
+}
+
+::placeholder {
+  color: #2c3e50;
+}
+
+ul {
+  list-style-type: none;
 }
 
 /** TRANSITIONS */
