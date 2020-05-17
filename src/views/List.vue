@@ -22,43 +22,41 @@ export default {
   data() {
     return {
       isError: false,
-      newContact: '',
+      newContact: "",
       contacts: ['Beau Thabeast', 'Cindy Rella', 'Alice Vunderlind']
     }
   },
   methods: {
     addContact() {
-      if(this.newContact.length==0){
+      if(this.newContact.length == 0){
         return;
       } 
-      if( this.contacts.find(contact => contact==this.newContact)===undefined){
+      if(this.contacts.find(contact => contact==this.newContact) === undefined){
         this.contacts.push(this.newContact)
-        this.newContact = ''
-        this.isError = false;
+        this.newContact = ""
+        this.isError = false
       }else{
-        this.isError = true;
+        this.isError = true
       }
     }
   }
 }
 </script>
 <style>
-  .error {
-    color: crimson;
-    font-size: 14px;
-    font-weight: 700;
-    text-align: center;
-    border: 1px solid crimson;
-    border-radius: 5px;
-    padding: 10px;
-    margin-top: 10px;
-    width: 50%;
-    margin: 0 auto;
-  }
+.error {
+  color: crimson;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  border: 1px solid crimson;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  width: 50%;
+  margin: 0 auto;
+}
 
-  .error > span {
-    font-weight: 900;
-  }
-
-
+.error > span {
+  font-weight: 900;
+}
 </style>
