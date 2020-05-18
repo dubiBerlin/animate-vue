@@ -68,13 +68,11 @@ export default {
       this.addBlinkClass(this.contacts, 0)
     },
     addBlinkClass(contacts, index) {
-      console.log("addBlinkClass: ",index); 
-
       contacts[index].blink = true
 
       this.timeout = setTimeout(() => {
         contacts[index].blink = false
-        if (contacts.length - 1 >= (index + 1)) {
+        if (contacts.length - 1 >= index + 1) {
           index = index + 1
           this.addBlinkClass(contacts, index)
         } else {
@@ -108,11 +106,11 @@ export default {
 </script>
 <style>
 .error {
-  color: crimson;
+  color: #dc3545;
   font-size: 14px;
   font-weight: 700;
   text-align: center;
-  border: 1px solid crimson;
+  border: 1px solid #dc3545;
   border-radius: 5px;
   padding: 10px;
   margin-top: 10px;
@@ -125,14 +123,14 @@ export default {
 }
 
 .errorli {
-  background-color: crimson;
+  background-color: #dc3545;
   color: #eee;
   transition: all 1s;
 }
 
 .errorli:hover {
   color: #eee;
-  border-color: crimson;
+  border-color: #dc3545;
 }
 
 .blink {
