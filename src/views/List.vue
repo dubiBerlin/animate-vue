@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="width:70%; margin:0 auto;">
     <input type="text" v-model="newContact" placeholder="Name" />
     <button @click="addContact">Add Contact</button>
     <button @click="blinkList">Blink</button>
