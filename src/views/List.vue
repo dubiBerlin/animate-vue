@@ -8,8 +8,7 @@
         <span>{{ this.newContact }}</span> allready exists in the list
       </div>
     </transition>
-
-    <ul>
+    <transition-group tag="ul" name="slide-up">
       <li
         v-for="contact in contacts"
         :key="contact.name"
@@ -17,7 +16,7 @@
       >
         {{ contact.name }}
       </li>
-    </ul>
+    </transition-group>
   </div>
 </template>
 

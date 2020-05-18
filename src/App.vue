@@ -114,4 +114,13 @@ ul {
 .slide-fade-leave-active {
   transition: all 0.5s ease;
 }
+
+.slide-up-enter {
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+.slide-up-enter-active {
+  transition: all 0.2s ease;
+}
 </style>
