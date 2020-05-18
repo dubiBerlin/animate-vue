@@ -3,6 +3,7 @@
     <input type="text" v-model="newContact" placeholder="Name" />
     <button @click="addContact">Add Contact</button>
     <button @click="startBlinking">Blink</button>
+    <button @click="sortContacts">Sort</button>
     <transition name="fade">
       <div v-show="isError" class="error">
         <span>{{ this.newContact }}</span> allready exists in the list
@@ -99,6 +100,18 @@ export default {
         contact.isDuplicate = true
         this.duplicateContact = contact
       }
+    },
+    compare(a, b) {
+      if (a.name.toUpperCase() > b.name.toUpperCase()) {
+        return 1
+      }
+      if (a.name.toUpperCase() < b.name.toUpperCase()) {
+        return -1
+      }
+      return 0
+    },
+    sortContacts() {
+      this.contacts = this.contacts.sort(this.compare)
     }
   }
 }
