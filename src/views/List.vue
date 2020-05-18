@@ -2,7 +2,7 @@
   <div style="width:70%; margin:0 auto;">
     <input type="text" v-model="newContact" placeholder="Name" />
     <button @click="addContact">Add Contact</button>
-    <button @click="blinkList">Blink</button>
+    <button @click="startBlinking">Blink</button>
     <transition name="fade">
       <div v-show="isError" class="error">
         <span>{{ this.newContact }}</span> allready exists in the list
@@ -13,7 +13,7 @@
       <li
         v-for="contact in contacts"
         :key="contact.name"
-        :class="{ errorli: contact.isDuplicate }"
+        :class="[{ errorli: contact.isDuplicate }, { blink: contact.blink }]"
       >
         {{ contact.name }}
       </li>
@@ -47,7 +47,8 @@ export default {
       liErrorClass: "error-li",
       blinkClass: "blink",
       blink: false,
-      isError: false
+      isError: false,
+      timeout: ""
     }
   },
   watch: {
@@ -60,14 +61,31 @@ export default {
     }
   },
   methods: {
-    blinkList() {
-      console.log("blinkList() ", this.blink)
-      // this.blink = true
+    startBlinking() {
+      if (this.contacts.length == 0) {
+        return
+      }
+      this.addBlinkClass(this.contacts, 0)
+    },
+    addBlinkClass(contacts, index) {
+      console.log("addBlinkClass: ",index); 
+
+      contacts[index].blink = true
+
+      this.timeout = setTimeout(() => {
+        contacts[index].blink = false
+        if (contacts.length - 1 >= (index + 1)) {
+          index = index + 1
+          this.addBlinkClass(contacts, index)
+        } else {
+          clearTimeout(this.timeout)
+        }
+      }, 500)
     },
     addContact() {
       if (this.newContact.length == 0) {
         return
-      } 
+      }
 
       let contact = this.contacts.find(
         contact => contact.name == this.newContact
@@ -121,7 +139,7 @@ export default {
   border-color: goldenrod;
   background-color: gold;
   color: #000;
-  transition: all 0.2s;
+  transition: all 2s;
 }
 
 li {
@@ -132,6 +150,7 @@ li {
   border: 1px solid transparent;
   border-radius: 5px;
   color: #000;
+  transition: all 2s;
 }
 
 li:hover {
