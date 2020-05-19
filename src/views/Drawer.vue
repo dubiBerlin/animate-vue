@@ -10,6 +10,7 @@
       @leave="leave"
       :css="false"
     >
+    <!-- :css="false" tells vue not to handle the transition classes that we used to instead we are telling vue that we are relying on the js hooks-->
       <div v-if="isOpen" class="drawer">
         <img src="../assets/avatar.png" alt="avatar" />
         <div></div>
