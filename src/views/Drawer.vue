@@ -45,11 +45,11 @@ export default {
       Velocity(
         el,
         { opacity: 1, width: "12em" },
-        { duration: 1000, easing: "easeOutCubic", complete: done }
+        { duration: 1000, easing: [100, 5], complete: done } // [100, 5 ] spring physics
       )
     },
-    leave(el,done) {
-         /**
+    leave(el, done) {
+      /**
        * @param el the element Velocity has to animate
        * @param object the styles velocity has to animate
        * @param object tells Velocity how exactly it should animate
