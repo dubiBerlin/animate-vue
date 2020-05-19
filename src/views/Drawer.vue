@@ -48,9 +48,17 @@ export default {
         { duration: 1000, easing: "easeOutCubic", complete: done }
       )
     },
-    leave(el) {
-      el.style.opacity = 0
-      el.style.width = "0em"
+    leave(el,done) {
+         /**
+       * @param el the element Velocity has to animate
+       * @param object the styles velocity has to animate
+       * @param object tells Velocity how exactly it should animate
+       */
+      Velocity(
+        el,
+        { opacity: 0, width: "0em" },
+        { duration: 500, easing: "easeInCubic", complete: done }
+      )
     }
   }
 }
