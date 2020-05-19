@@ -3,13 +3,21 @@
     <button @click="isOpen = !isOpen">
       My Profile
     </button>
-    <div v-if="isOpen" class="drawer">
-      <img src="../assets/avatar.png" alt="avatar" />
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+
+    <transition
+      @before-enter="beforeEnter"
+      @enter="enter"
+      @leave="leave"
+      :css="false"
+    >
+      <div v-if="isOpen" class="drawer">
+        <img src="../assets/avatar.png" alt="avatar" />
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -18,6 +26,17 @@ export default {
   data() {
     return {
       isOpen: false
+    }
+  },
+  methods: {
+    beforeEnter() {
+      alert("beforeEnter")
+    },
+    enter() {
+      alert("enter")
+    },
+    leave() {
+      alert("leave")
     }
   }
 }
