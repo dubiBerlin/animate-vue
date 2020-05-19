@@ -73,7 +73,6 @@ img {
   background-color: #e0e0e0;
   box-shadow: 0.08em 0.03em 0.4em #ababab;
   padding-top: 0.7em;
-  margin: 15px auto 0 auto;
 }
 .drawer div {
   height: 3.5em;
