@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import Velocity from "velocity-animate"
+
 export default {
   data() {
     return {
@@ -30,14 +32,25 @@ export default {
     }
   },
   methods: {
-    beforeEnter() {
-      alert("beforeEnter")
+    beforeEnter(el) {
+      el.style.opacity = 0
+      el.style.width = "0em"
     },
-    enter() {
-      alert("enter")
+    enter(el, done) {
+      /**
+       * @param el the element Velocity has to animate
+       * @param object the styles velocity has to animate
+       * @param object tells Velocity how exactly it should animate
+       */
+      Velocity(
+        el,
+        { opacity: 1, width: "12em" },
+        { duration: 1000, easing: "easeOutCubic", complete: done }
+      )
     },
-    leave() {
-      alert("leave")
+    leave(el) {
+      el.style.opacity = 0
+      el.style.width = "0em"
     }
   }
 }
