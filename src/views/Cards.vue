@@ -19,7 +19,12 @@ export default {
     return {
       cards: [
         { title: "Could contain anything", id: 123 },
-        { title: "Endless possibilities", id: 456 }
+        { title: "Endless possibilities", id: 456 },
+        { title: "wwwww", id: 455 },
+        { title: "Endless possibilities", id: 453 },
+        { title: "Endless possibilities", id: 457 },
+        { title: "Endless possibilities", id: 451 },
+        { title: "Endless possibilities", id: 454 }
       ]
     }
   },
@@ -31,8 +36,8 @@ export default {
     enter(el, done) {
       Velocity(
         el,
-        { opacity: 1, width: "12em", rotateZ: "3deg" },
-        { duration: 1000, easing: [70, 8], complete: done }
+        { opacity: 1, width: "12em", rotateZ: "13deg" },
+        { duration: 1000, easing: [300, 80], complete: done }
       )
     }
   }
