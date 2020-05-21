@@ -22,6 +22,14 @@ export default {
   },
   mounted() {
     // stagger cards into position
+    gsap.from(".card", {
+      duration: 0.5,
+      opacity: 0,
+      scale: 0,
+      y: 200,
+      ease: "power1",
+      stagger: 0.1
+    })
   }
 }
 </script>
