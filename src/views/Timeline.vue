@@ -12,7 +12,7 @@ import gsap from 'gsap'
 export default {
   mounted() {
     // timeline will go here
-    let tl = gsap.timeline({ repeat: -1 }) // -1 infinite loop
+    let tl = gsap.timeline({ repeat: -1, repeatDelay: 3 }) // -1 infinite loop
     tl.to(".first", {
       x: 700,
       duration: 2,
