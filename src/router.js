@@ -41,22 +41,28 @@ export default new Router({
         import(/* webpackChunkName: "about" */ "./views/Cards.vue")
     },
     {
-      path: '/simple',
-      name: 'simple',
+      path: "/simple",
+      name: "simple",
       component: () =>
-        import(/* webpackChunkName: "simple" */ './views/Simple.vue')
+        import(/* webpackChunkName: "simple" */ "./views/Simple.vue")
     },
     {
-      path: '/stagger',
-      name: 'stagger',
+      path: "/stagger",
+      name: "stagger",
       component: () =>
-        import(/* webpackChunkName: "stagger" */ './views/Stagger.vue')
+        import(/* webpackChunkName: "stagger" */ "./views/Stagger.vue")
     },
     {
-      path: '/state',
-      name: 'state',
+      path: "/state",
+      name: "state",
       component: () =>
-        import(/* webpackChunkName: "stagger" */ './views/State.vue')
+        import(/* webpackChunkName: "stagger" */ "./views/State.vue")
+    },
+    {
+      path: "/timeline",
+      name: "timeline",
+      component: () =>
+        import(/* webpackChunkName: "timeline" */ "./views/Timeline.vue")
     }
   ]
 })
