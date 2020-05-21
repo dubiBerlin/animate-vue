@@ -18,11 +18,16 @@ export default {
       duration: 2,
       ease: "expo.out"
     })
-    tl.to(".second", {
-      x: 700,
-      duration: 2,
-      ease: "expo.out"
-    })
+    tl.to(
+      ".second",
+      {
+        x: 700,
+        duration: 2,
+        ease: "expo.out"
+      },
+      "-=.75"
+      // 0.5
+    )
     tl.to(".third", {
       x: 700,
       duration: 2,
