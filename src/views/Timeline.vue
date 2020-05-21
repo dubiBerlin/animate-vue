@@ -25,7 +25,8 @@ export default {
         duration: 2,
         ease: "expo.out"
       },
-      "-=.75"
+      "<"
+      // "-=.75"
       // 0.5
     )
     tl.to(".third", {
