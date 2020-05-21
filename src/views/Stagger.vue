@@ -16,7 +16,12 @@ export default {
         { id: 4919 },
         { id: 5527 },
         { id: 9428 },
-        { id: 7103 }
+        { id: 7103 },
+        { id: 7104 },
+        { id: 7105 },
+        { id: 7106 },
+        { id: 7107 },
+        { id: 7108 }
       ]
     }
   },
@@ -28,7 +33,10 @@ export default {
       scale: 0,
       y: 200,
       ease: "power1",
-      stagger: 0.1
+      stagger: {//0.1
+        each: 0.1,
+        from: "center" // "edges"
+      }
     })
   }
 }
