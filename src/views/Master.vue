@@ -1,5 +1,6 @@
 <template>
   <div>
+    <button @click="play" >Play</button>
     <div id="container">
       <img class="paws first" src="../assets/paws.png" alt="fox-paws" />
       <img class="paws second" src="../assets/paws.png" alt="fox-paws" />
@@ -12,33 +13,51 @@
 </template>
 
 <script>
-import gsap from 'gsap'
+import gsap from "gsap"
+
+let masterTL = gsap.timeline();
 
 export default {
   methods: {
+    play() {
+      masterTL.add(this.pawsTl())
+      masterTL.add(this.foxTl())
+      masterTL.play()
+    },
     pawsTl() {
       let tl = gsap.timeline()
-      tl.to('.first', {
+      tl.to(".first", {
         opacity: 4,
         scale: 1,
         duration: 0.5,
-        ease: 'bounce.out'
+        ease: "bounce.out"
       })
       tl.to(
-        '.second',
-        { opacity: 1, scale: 1, duration: 0.5, ease: 'bounce.out' },
-        '<.3'
+        ".second",
+        { opacity: 1, scale: 1, duration: 0.5, ease: "bounce.out" },
+        "<.3"
       )
       tl.to(
-        '.third',
-        { opacity: 1, scale: 1, duration: 0.5, ease: 'bounce.out' },
-        '<.3'
+        ".third",
+        { opacity: 1, scale: 1, duration: 0.5, ease: "bounce.out" },
+        "<.3"
       )
       tl.to(
-        '.fourth',
-        { opacity: 1, scale: 1, duration: 0.5, ease: 'bounce.out' },
-        '<.3'
+        ".fourth",
+        { opacity: 1, scale: 1, duration: 0.5, ease: "bounce.out" },
+        "<.3"
       )
+      return tl
+    },
+    foxTl(){
+      let tl = gsap.timeline()
+      tl.to("#fox", {
+        opacity: 1,
+        filter: "blur(0)",
+        scale: 1,
+        duration: 0.4,
+        ease: "slow"
+      })
       return tl
     }
   }
@@ -56,6 +75,8 @@ export default {
 #fox {
   height: 8em;
   width: 8em;
+  opacity: 0;
+  filter: blur(2px);
 }
 
 .paws {
